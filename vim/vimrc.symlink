@@ -77,7 +77,8 @@ call plug#begin()
 
   " Surround strings
   " This does NOT work
-  "Plug 'tpope/vim-surround'
+  " Plug 'tpope/vim-surround'
+  Plug 'jiangmiao/auto-pairs'
 
   " Toolbar
   Plug 'vim-airline/vim-airline'
@@ -144,6 +145,20 @@ call plug#begin()
   Plug 'lifepillar/vim-gruvbox8'
 call plug#end()
 
+" Tell the language client to use the default IP and port
+" that Solargraph runs on
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['tcp://localhost:7658']
+    \ }
+
+" Don't send a stop signal to the server when exiting vim.
+" This is optional, but I don't like having to restart Solargraph
+" every time I restart vim.
+let g:LanguageClient_autoStop = 0
+
+" Configure ruby omni-completion to use the language client:
+autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
+
 "----------------------------------------------------------------------------//
 " BASIC CONFIGURATION                                                       {{{
 "------------------------------------+---------------------------------------//
@@ -156,6 +171,7 @@ set history=500
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+set smartindent
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -169,7 +185,7 @@ let mapleader = ","
 nmap <leader>w :w!<cr>
 
 " Open files search
-nmap <leader>f :Files<cr>
+nmap <leader>ff :Files<cr>
 
 " Run Git commands
 nmap <leader>g :Git
@@ -412,14 +428,20 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Strip trailing whitespace
 nnoremap <leader>nw :%s/\s\+$//e<cr>:let @/=''<CR>
 
-" Move a line of text using Command+[jk] on mac
-nnoremap K :m .-2<CR>==
-nnoremap J :m .+1<CR>==
-vnoremap K :m '<-2<CR>gv=gv
-vnoremap J :m '>+1<CR>gv=gv
+" Move a line of text using Ctrl+[jk] on mac
+"vnoremap <C-k> :m '<-2<CR>gv=gv
+"vnoremap <C-j> :m '>+1<CR>gv=gv
+"nnoremap <C-k> :m .-2<CR>==
+"nnoremap <C-j> :m .+1<CR>==
 
+"This is to make shift + [jk] move a line up or down
+"nnoremap K :m .-2<CR>==
+"nnoremap J :m .+1<CR>==
+"vnoremap K :m '<-2<CR>gv=gv
+"vnoremap J :m '>+1<CR>gv=gv
 
 " Delete trailing white space on save, useful for some filetypes ;)
+
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
