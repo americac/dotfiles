@@ -185,11 +185,7 @@ let mapleader = ","
 nmap <leader>w :w!<cr>
 
 " Open files search
-<<<<<<< HEAD
-nmap <leader>f :Files<cr>
-=======
 nmap <leader>ff :Files<cr>
->>>>>>> f80dee9 (Add Solargraph, fixed typo, removed ability to move lines up and down)
 
 " Run Git commands
 nmap <leader>g :Git
