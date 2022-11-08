@@ -313,11 +313,11 @@ else
 	"}}}
 endif
 
-hi  Comment  cterm=italic
+"hi  Comment  cterm=italic
 hi  gitcommitFirstLine ctermfg=81
 hi  gitcommitSummary ctermfg=81
 hi  RubyKeywordAsMethod ctermfg=44
-set cursorline
+" set cursorline
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
