@@ -290,7 +290,7 @@ endif
 set termguicolors
 
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox8_hard
+colorscheme iceberg
 
 set background=dark
 
