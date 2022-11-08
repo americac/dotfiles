@@ -38,6 +38,7 @@ call plug#begin()
 
 
 	" Ruby -------------------{{{
+  Plug 'bbatsov/rubocop'
 	Plug 'slim-template/vim-slim'
 	Plug 'vim-ruby/vim-ruby'
 	"Plug 'vim-utils/vim-ruby-fold' "{{{
@@ -290,7 +291,8 @@ endif
 set termguicolors
 
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme iceberg
+colorscheme gruvbox8_hard
+" colorscheme iceberg
 
 set background=dark
 
@@ -313,11 +315,10 @@ else
 	"}}}
 endif
 
-"hi  Comment  cterm=italic
 hi  gitcommitFirstLine ctermfg=81
 hi  gitcommitSummary ctermfg=81
 hi  RubyKeywordAsMethod ctermfg=44
-" set cursorline
+ set cursorline
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
