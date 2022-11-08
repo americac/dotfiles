@@ -225,6 +225,10 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
 " Always show current position
 set ruler
 
