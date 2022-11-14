@@ -105,8 +105,8 @@ call plug#begin()
   	" Ripgrep support with FZF
   	nnoremap <silent> \ :Rg<CR>
 
-  	" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-  	" let g:fzf_layout = { 'down' : '~40%' }
+  	 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+  	 let g:fzf_layout = { 'down' : '~40%' }
 
   	" CTRL-A CTRL-Q to select all and build quickfix list
 
@@ -125,6 +125,13 @@ call plug#begin()
   	let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
   	"
   "}}}
+
+  " Silver search to use with fzf
+  if executable('ag')
+    " Note we extract the column as well as the file and line number
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+  endif
 
   Plug 'preservim/nerdtree' "{{{
   	" Tree file system explorer for Vim
