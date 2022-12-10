@@ -47,6 +47,7 @@ call plug#begin()
 	Plug 'tpope/vim-rake'
 	Plug 'tpope/vim-bundler'
 	Plug 'tpope/vim-rails'
+	Plug 'tpope/vim-cucumber'
 	Plug 'tpope/vim-endwise' "{{{
 		" Wisely add 'end' or (equivalent) in Ruby, Shell Scripting, Elixir, Lua,
 		" Haskell, etc.
