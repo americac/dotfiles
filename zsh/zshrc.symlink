@@ -64,3 +64,6 @@ export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/americacalleros/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
