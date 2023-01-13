@@ -80,7 +80,6 @@ call plug#begin()
   " Surround strings
   " This does NOT work
   " Plug 'tpope/vim-surround'
-  Plug 'jiangmiao/auto-pairs'
 
   " Toolbar
   Plug 'vim-airline/vim-airline'
