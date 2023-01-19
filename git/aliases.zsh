@@ -23,6 +23,8 @@ alias gcm='git commit -m'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias main='git checkout main'
+alias grm='git rebase main'
+alias gbdel='git branch -D'
 
 alias gst='git status'
 alias gpr='git pull --rebase'
