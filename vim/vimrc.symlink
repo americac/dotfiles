@@ -44,6 +44,9 @@ call plug#begin()
 	"Plug 'vim-utils/vim-ruby-fold' "{{{
 	"	" let g:ruby_fold_lines_limit = 200
 	""}}}
+
+  " Surround strings
+  Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-rake'
 	Plug 'tpope/vim-bundler'
 	Plug 'tpope/vim-rails'
@@ -77,10 +80,6 @@ call plug#begin()
   "Git
   Plug 'tpope/vim-fugitive'
 
-  " Surround strings
-  " This does NOT work
-  " Plug 'tpope/vim-surround'
-
   " Toolbar
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -91,6 +90,7 @@ call plug#begin()
   let g:strip_whitespace_confirm=0
   "Multi-Cursor
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+  " Multicursor mappings
   let g:VM_maps = {}
   let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
   let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
@@ -207,10 +207,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "----------------------------------------------------------------
-" Multicursor mappings
-let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
-let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 "---------------------------------------------------------------
 "
 " Set 7 lines to the cursor - when moving vertically using j/k
