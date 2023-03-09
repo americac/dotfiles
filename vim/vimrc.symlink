@@ -38,12 +38,11 @@ call plug#begin()
 
 
 	" Ruby -------------------{{{
-  Plug 'bbatsov/rubocop'
+ " Plug 'bbatsov/rubocop'
+  Plug 'ngmy/vim-rubocop'
+    let g:vimrubocop_config = './.rubocop.yml'
 	Plug 'slim-template/vim-slim'
 	Plug 'vim-ruby/vim-ruby'
-	"Plug 'vim-utils/vim-ruby-fold' "{{{
-	"	" let g:ruby_fold_lines_limit = 200
-	""}}}
 
   " Surround strings
   Plug 'tpope/vim-surround'
@@ -76,6 +75,14 @@ call plug#begin()
 
   " Linting
   Plug 'dense-analysis/ale'
+  "  let g:ale_fixers = ['prettier', 'eslint', 'rubocop']
+    let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'ruby': ['rubocop'],
+\}
+"    let g:ale_linters_explicit = 1
+    let g:ale_fix_on_save = 1
 
   "Git
   Plug 'tpope/vim-fugitive'
@@ -295,7 +302,7 @@ endif
 set termguicolors
 
 " let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox8_hard
+ colorscheme gruvbox8_hard
 " colorscheme iceberg
 
 set background=dark
