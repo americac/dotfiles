@@ -75,13 +75,11 @@ call plug#begin()
 
   " Linting
   Plug 'dense-analysis/ale'
-  "  let g:ale_fixers = ['prettier', 'eslint', 'rubocop']
     let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'css': ['prettier'],
 \   'ruby': ['rubocop'],
 \}
-"    let g:ale_linters_explicit = 1
     let g:ale_fix_on_save = 1
 
   "Git
@@ -158,13 +156,33 @@ call plug#begin()
   "
   "Color scheme
   Plug 'lifepillar/vim-gruvbox8'
+  Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 call plug#end()
 
 " Tell the language client to use the default IP and port
 " that Solargraph runs on
+set hidden
 let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['tcp://localhost:7658']
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio', 'tcp://localhost:7658'],
     \ }
+
+" note that if you are using Plug mapping you should not use `noremap` mappings.
+nmap <F5> <Plug>(lcn-menu)
+" Or map each action separately
+nmap <silent>K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
+"let g:LanguageClient_serverCommands = {
+"    \ 'ruby': ['tcp://localhost:7658']
+"    \ }
 
 " Don't send a stop signal to the server when exiting vim.
 " This is optional, but I don't like having to restart Solargraph
