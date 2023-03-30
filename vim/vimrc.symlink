@@ -64,6 +64,14 @@ call plug#begin()
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 	"}}}
 
+  " to snake_case: :crs
+  " to camelCase: :crc
+  " to UPPER_CASE: :cru
+  " to MixedCase: :crm
+  " to dot.case: :cr.
+  " to space case: :cr<space>
+  " to Title Case: :crt
+	Plug 'tpope/vim-abolish'
 	" Python ---------------{{{
 	Plug 'vim-python/python-syntax'
 		let g:python_highlight_all = 1
