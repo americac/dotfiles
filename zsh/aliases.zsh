@@ -8,8 +8,8 @@ alias dotf='cd ~/.dotfiles'
 
 alias gdump='rake graphql:dump_schema'
 
-alias hrccmstage='heroku run -a jam-transparency-staging bundle exec rails c'
-alias hrccmprod='heroku run -a jam-transparency-production bundle exec rails c'
-alias deployt='heroku pipelines:promote -a jam-transparency-staging'
+alias helixs='heroku run -a jam-transparency-staging bundle exec rails c'
+alias helixp='heroku run -a jam-transparency-production bundle exec rails c'
+alias helixdeploy='heroku pipelines:promote -a jam-transparency-staging'
 alias workcm='cd ~/dev/transparency'
 alias dev='cd ~/dev'
