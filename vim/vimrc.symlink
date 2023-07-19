@@ -44,6 +44,9 @@ call plug#begin()
 	Plug 'slim-template/vim-slim'
 	Plug 'vim-ruby/vim-ruby'
 
+  " GitHub CoPilot
+  Plug 'github/copilot.vim'
+
   " Surround strings
   Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-rake'
