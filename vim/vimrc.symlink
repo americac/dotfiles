@@ -66,6 +66,10 @@ call plug#begin()
 	Plug 'tpope/vim-markdown'
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 	"}}}
+  Plug 'Yggdroot/indentLine'
+  let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+  Plug 'elzr/vim-json'
+  let g:vim_json_syntax_conceal = 0
 
   " to snake_case: :crs
   " to camelCase: :crc
