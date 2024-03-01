@@ -181,20 +181,20 @@ call plug#end()
 " Tell the language client to use the default IP and port
 " that Solargraph runs on
 set hidden
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio', 'tcp://localhost:7658'],
-    \ }
+"let g:LanguageClient_serverCommands = {
+"    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+"    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+"    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+"    \ 'python': ['/usr/local/bin/pyls'],
+"    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio', 'tcp://localhost:7658'],
+"    \ }
 
 " note that if you are using Plug mapping you should not use `noremap` mappings.
-nmap <F5> <Plug>(lcn-menu)
+"nmap <F5> <Plug>(lcn-menu)
 " Or map each action separately
-nmap <silent>K <Plug>(lcn-hover)
-nmap <silent> gd <Plug>(lcn-definition)
-nmap <silent> <F2> <Plug>(lcn-rename)
+"nmap <silent>K <Plug>(lcn-hover)
+"nmap <silent> gd <Plug>(lcn-definition)
+"nmap <silent> <F2> <Plug>(lcn-rename)
 "let g:LanguageClient_serverCommands = {
 "    \ 'ruby': ['tcp://localhost:7658']
 "    \ }
@@ -202,10 +202,10 @@ nmap <silent> <F2> <Plug>(lcn-rename)
 " Don't send a stop signal to the server when exiting vim.
 " This is optional, but I don't like having to restart Solargraph
 " every time I restart vim.
-let g:LanguageClient_autoStop = 0
+"let g:LanguageClient_autoStop = 0
 
 " Configure ruby omni-completion to use the language client:
-autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
+"autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
 
 "----------------------------------------------------------------------------//
 " BASIC CONFIGURATION                                                       {{{
@@ -217,6 +217,8 @@ autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
 set history=500
 
 " Enable filetype plugins
+set nocompatible
+filetype on
 filetype plugin on
 filetype indent on
 set smartindent
