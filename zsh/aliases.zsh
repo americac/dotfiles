@@ -10,6 +10,8 @@ alias gdump='rake graphql:dump_schema'
 
 alias helixs='heroku run -a jam-transparency-staging bundle exec rails c'
 alias helixp='heroku run -a jam-transparency-production bundle exec rails c'
+alias helixrp='heroku run -a jam-transparency-production'
+alias helixrs='heroku run -a jam-transparency-staging'
 alias helixdeploy='heroku pipelines:promote -a jam-transparency-staging'
 alias workcm='cd ~/dev/transparency'
 alias dev='cd ~/dev'
