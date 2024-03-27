@@ -171,10 +171,6 @@ call plug#begin()
   "
   "Color scheme
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 call plug#end()
 
