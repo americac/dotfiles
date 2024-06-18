@@ -17,6 +17,7 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RF
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -41,3 +42,5 @@
 [user]
 	name = America Calleros
 	email = america.quintero@gmail.com
+[interactive]
+	diffFilter = diff-so-fancy --patch

@@ -1,0 +1,25 @@
+# install rbenv
+brew "rbenv"
+
+# install bat
+brew "bat"
+
+# install silversearch for vim
+brew "the_silver_searcher"
+
+# install diff-so-fancy
+# configs: https://github.com/so-fancy/diff-so-fancy
+brew "diff-so-fancy"
+
+# install lsd
+# https://github.com/lsd-rs/lsd
+brew "lsd"
+# install fonts for lsd to work
+# need to select the font in termila text profile
+brew "font-hack-nerd-font"
+
+# install fzf
+brew "fzf"
+
+# install lazygit
+brew "lazygit"
