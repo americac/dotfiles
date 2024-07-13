@@ -2,6 +2,9 @@ if [ -f ~/.private_profile ]; then
   source ~/.private_profile
 fi
 
+# source fuzzy search
+source <(fzf --zsh)
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
