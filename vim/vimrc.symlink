@@ -40,9 +40,6 @@ call plug#begin()
 
 
 	" Ruby -------------------{{{
- " Plug 'bbatsov/rubocop'
-  Plug 'ngmy/vim-rubocop'
-    let g:vimrubocop_config = './.rubocop.yml'
 	Plug 'slim-template/vim-slim'
 	Plug 'vim-ruby/vim-ruby'
 
@@ -97,6 +94,7 @@ call plug#begin()
 \   'css': ['prettier'],
 \   'ruby': ['rubocop'],
 \}
+    let g:ale_ruby_rubocop_executable = 'bin/rubocop'
     let g:ale_fix_on_save = 1
 
   "Git
